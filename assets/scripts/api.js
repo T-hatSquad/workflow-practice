@@ -1,4 +1,3 @@
-'use strict'
 
 const getBooks = function() {
   return $.ajax({
