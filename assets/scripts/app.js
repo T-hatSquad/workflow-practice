@@ -1,5 +1,8 @@
 'use strict'
 
+const api = require('./api')
+const ui = require('./ui')
+
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
@@ -7,5 +10,10 @@
 // require('./example')
 
 $(() => {
-  // your JS code goes here
+  $('#get-books').on('click', event => {
+    event.preventDefault()
+    api()
+      .then(ui.onGetBooksSuccess)
+      .catch(ui.onGetBooksFailure)
+  })
 })
